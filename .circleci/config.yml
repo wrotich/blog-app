@@ -1,12 +1,12 @@
 
 default: &defaults
   docker:
-    - image: circleci/ruby:2.4.1-node-browsers
+    - image: circleci/ruby:2.6.0-node-browsers
       environment:
         PGHOST: localhost
         PGUSER: postgres
         RAILS_ENV: test
-        CC_TEST_REPORTER_ID: 92281c251fb336dca7bb107f219fc6b127fa35f0dec76f200af7b9672bd99106
+        CC_TEST_REPORTER_ID: ${CC_TEST_REPORTER_ID}
     - image: postgres:9.5
       environment:
         POSTGRES_USER: postgres
